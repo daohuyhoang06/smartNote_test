@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+
+# Virtualenv
+venv/
+env/
+myenv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Static & media (nếu build ra)
+staticfiles/
+media/
+
+# Migrations cache (chỉ nếu bạn không muốn commit)
+*/migrations/__pycache__/
+
+# Local settings
+.env
+local_settings.py
