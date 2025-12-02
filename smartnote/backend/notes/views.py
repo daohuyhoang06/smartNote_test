@@ -154,14 +154,24 @@ class TopicDetailView(mixins.RetrieveModelMixin,
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Topic.objects.filter(note__user=self.request.user)
+        # Khi drf_yasg gọi trong lúc build schema, thuộc tính này = True
+        if getattr(self, 'swagger_fake_view', False):
+            return Topic.objects.none()
+
+        user = self.request.user
+        # Phòng hờ trường hợp chưa auth
+        if not user or not user.is_authenticated:
+            return Topic.objects.none()
+
+        return Topic.objects.filter(note__user=user)
+        # Hoặc dùng id cho chắc:
+        # return Topic.objects.filter(note__user_id=user.id)
 
     def get(self, request, *args, **kwargs):
         instance = self.get_object()
         ser = self.get_serializer(instance)
         return ok(ser.data, message="Fetched")
 
-    # (tuỳ chọn) PATCH/PUT nếu bạn cần:
     def patch(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=True)

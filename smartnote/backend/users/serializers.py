@@ -36,6 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
+
         pwd = validated_data.pop("password", None)
         for k, v in validated_data.items():
             setattr(instance, k, v)
