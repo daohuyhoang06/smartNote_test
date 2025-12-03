@@ -170,7 +170,7 @@ JWT_SIGNING_KEY = os.environ.get("JWT_SIGNING_KEY", SECRET_KEY)
 SIMPLE_JWT = {
     "ALGORITHM": "HS256",                 # <-- HS256
     "SIGNING_KEY": JWT_SIGNING_KEY,       # khóa đối xứng để ký & verify
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=300),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,        # quay vòng refresh
     "BLACKLIST_AFTER_ROTATION": True,     # và blacklist cái cũ

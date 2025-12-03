@@ -24,6 +24,15 @@ class Topic(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Lưu thời điểm tạo
     updated_at = models.DateTimeField(auto_now=True)      # Lưu thời điểm cập nhật
 
+    class Meta:
+        # mỗi note (tức mỗi user) không được có 2 topic trùng title
+        constraints = [
+            models.UniqueConstraint(
+                fields=['note', 'title'],
+                name='unique_topic_title_per_note',
+            )
+        ]
+
     def delete(self, *args, **kwargs):
         vocas = [vt.voca for vt in self.voca_topics.all()]
         super().delete(*args, **kwargs)

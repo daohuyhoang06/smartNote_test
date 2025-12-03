@@ -29,12 +29,23 @@ class NoteSerializer(serializers.ModelSerializer):
 
 class TopicSerializer(serializers.ModelSerializer):
      # nhập vào là string, ví dụ: "学校,先生,学生"
-    words = serializers.CharField(required=False, write_only=True)
+    words = serializers.CharField(required=False, allow_blank=True, write_only=True)
     vocas = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Topic
         fields = ['id', 'title', 'words', 'vocas', 'created_at', 'updated_at']
+
+    def validate(self, attrs):
+        note = self.context['request'].user.note
+        title = attrs.get('title')
+
+        if Topic.objects.filter(note=note, title=title).exists():
+            raise serializers.ValidationError({
+                "title": ["Title already exists in this note."]
+            })
+        
+        return attrs
 
 
     def get_vocas(self, obj):
