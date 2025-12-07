@@ -29,7 +29,23 @@
 }</con:request><con:originalUri>http://localhost/api/topics/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="Method 2" id="5ab58717-2c2c-4a82-a1ea-000051958f33" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:top="http://localhost/api/topics/">top:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:top="http://localhost/api/topics/">top:Response</con:element></con:representation><con:request name="Request 1" id="4653593c-c751-4e0f-91f2-a98eb99a7b18" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
-&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="10a2a491-b0b5-437a-8fc0-c50ef33d3354" name="Auth Testsuite"><con:description>TestSuite generated for REST Service [http://localhost:8000]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e89225f9-fb5d-4132-b399-c69c08f32706" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="11b1b486-462f-4ba9-b70f-c6665471c1cc"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "${#Project#username}", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="407076fe-de7f-4af2-8804-52544c11fefa" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="search" path="/api/topics/search/" id="8a8ec109-18c3-4bb6-9c8b-48db2c901e53"><con:settings/><con:parameters><con:parameter><con:name>q</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="8a822d73-7d69-4527-a927-8227b9e6f15e" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:sear="http://localhost/api/topics/search/">sear:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sear="http://localhost/api/topics/search/">sear:Response</con:element></con:representation><con:request name="Request 1" id="829f4a89-4e5d-464a-870a-085b5e36baf1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/search/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#search_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>q</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="topic" path="/api/topic/{topic_id}/" id="65088f4b-f465-42d4-aaa9-c3bce17a77d6"><con:settings/><con:parameters><con:parameter><con:name>topic_id</con:name><con:value>${#Project#topic_id}</con:value><con:style>TEMPLATE</con:style><con:default>${#Project#topic_id}</con:default></con:parameter></con:parameters><con:method name="Method 1" id="e9bc1ea2-4d83-44a1-ac32-8a3d6bb4c251" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:top="http://localhost/api/topic/">top:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>404 401</con:status><con:params/><con:element xmlns:top="http://localhost/api/topic/">top:Fault</con:element></con:representation><con:request name="Request 1" id="86b783fb-a66f-4c3a-8cd5-81c1b893b166" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>topic_id</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="{{add_word}}" path="/api/topic/{topic_id}/add-word/{add_word}/" id="a8dbeb7b-d27b-4460-b9d7-deaa0f82e0fd"><con:settings/><con:parameters><con:parameter><con:name>topic_id</con:name><con:value>${#Project#topic_id}</con:value><con:style>TEMPLATE</con:style><con:default>${#Project#topic_id}</con:default></con:parameter><con:parameter><con:name>add_word</con:name><con:value>${#Project#add_word}</con:value><con:style>TEMPLATE</con:style><con:default>${#Project#add_word}</con:default></con:parameter></con:parameters><con:method name="Method 1" id="1a75e76c-65ac-406a-b350-ede47c1f6fbc" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 404</con:status><con:params/><con:element xmlns:tata="http://localhost/api/topic/44/add-word/tata/">tata:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tata="http://localhost/api/topic/44/add-word/tata/">tata:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="a1358df6-7369-47ce-9b7e-c03c84cefd3c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/44/add-word/tata/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="topic_id" value="${#Project#topic_id" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>add_word</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="${#Project#vocal_detail_id}" path="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" id="f4a19b13-a467-42dc-98ca-518caff8642e"><con:settings/><con:parameters><con:parameter><con:name>topic_id</con:name><con:value>${#Project#topic_id}</con:value><con:style>TEMPLATE</con:style><con:default>${#Project#topic_id}</con:default></con:parameter><con:parameter><con:name>vocal_topic_id</con:name><con:value>${#Project#vocal_topic_id}</con:value><con:style>TEMPLATE</con:style><con:default>${#Project#vocal_topic_id}</con:default></con:parameter><con:parameter><con:name>vocal_detail_id</con:name><con:value>#Project#vocal_detail_id</con:value><con:style>TEMPLATE</con:style><con:default>#Project#vocal_detail_id</con:default></con:parameter></con:parameters><con:method name="Method 1" id="7a572560-7e2a-4a1c-a6ce-35c936aaf310" method="DELETE"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 404</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="Request 1" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="${#Project#vocal_topic_id}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="${#Project#topic_id}"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="10a2a491-b0b5-437a-8fc0-c50ef33d3354" name="Auth Testsuite"><con:description>TestSuite generated for REST Service [http://localhost:8000]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e89225f9-fb5d-4132-b399-c69c08f32706" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="11b1b486-462f-4ba9-b70f-c6665471c1cc"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "${#Project#username}", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="407076fe-de7f-4af2-8804-52544c11fefa" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 
 def response = messageExchange.responseContent
 assert response : "Response rỗng hoặc không nhận được response!"
@@ -90,7 +106,7 @@ project.setPropertyValue("email",    email)
 project.setPropertyValue("fullname", fullname)
 
 log.info "[Expected from DB] id=${id}, username=${username}, email=${email}, fullname=${fullname}"
-</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c4f6f056-dbff-43b4-95fc-ae7a77ee2ce0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Wrong Username/password" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="c1dcdfaf-ca9a-4026-9b87-8f4b3192389d"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "h", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="0e1fc331-9480-4498-ae4a-33c7004fda0e" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5f77ceff-d60b-41fe-8762-b7777616a315" name="JsonPath Match"><con:configuration><path>$.success</path><content>false</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple Contains" id="5a8425b1-7920-40d6-9c62-90296a7da352" name="Contains"><con:configuration><token>No active account found with the given credentials</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3553b815-bf08-4e7c-9942-91458d4d5fca"><con:configuration/></con:assertion><con:assertion type="JsonPath Match" id="49d639b0-9d0f-45c1-9fd7-34f9d5ad8640" name="JsonPath Match 1"><con:configuration><path>$.data</path><content>{}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f78aab50-987f-4af7-a856-2825c46e7eb4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_Empty Username" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="63fe6a68-ddca-43f0-ab96-d00080d32afe"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="56967687-0da5-4d34-a52c-97327c871416" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c4f6f056-dbff-43b4-95fc-ae7a77ee2ce0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Wrong Username/password" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="c1dcdfaf-ca9a-4026-9b87-8f4b3192389d"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "h", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="0e1fc331-9480-4498-ae4a-33c7004fda0e" name="Valid HTTP Status Codes"><con:configuration><codes>401</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5f77ceff-d60b-41fe-8762-b7777616a315" name="JsonPath Match"><con:configuration><path>$.success</path><content>false</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple Contains" id="5a8425b1-7920-40d6-9c62-90296a7da352" name="Contains"><con:configuration><token>No active account found with the given credentials</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3553b815-bf08-4e7c-9942-91458d4d5fca"><con:configuration/></con:assertion><con:assertion type="JsonPath Match" id="49d639b0-9d0f-45c1-9fd7-34f9d5ad8640" name="JsonPath Match 1"><con:configuration><path>$.data</path><content>{}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="14d81c54-64bb-4648-9cde-6f445bb27abd" name="Not Contains"><con:configuration><token>access</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f78aab50-987f-4af7-a856-2825c46e7eb4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_Empty Username" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="63fe6a68-ddca-43f0-ab96-d00080d32afe"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="56967687-0da5-4d34-a52c-97327c871416" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 def json = new JsonSlurper().parseText(messageExchange.responseContent)
 
 // 1. HTTP status phải là 400
@@ -214,13 +230,55 @@ def hits = forbidden.findAll { f -> lower.contains(f.toLowerCase()) }
 
 assert hits.isEmpty() : 
         "Response chứa thông tin lỗi/SQL nhạy cảm: ${hits.join(', ')}"
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="53ab2424-1a59-46e4-9e97-338ff6b2e4fe" name="Create User Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="93af7c69-0eb5-48e6-aabb-31ccf8aadc92" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success_Normal" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="d5053bf5-d20e-404c-a8c7-96cf22b15d28"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/users/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="6c778627-aba2-4b39-842e-70237249749e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
-      "username": "dhhoang066",
-      "email": "hoang250046@gmail.com",
-      "fullname": "dao huy hoangg",
-      "password": "hoang123",
-      "firebase_id": "666666666666666"
-   }</con:request><con:originalUri>http://localhost/api/users/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="81a9852d-65c1-438f-a396-51d57c65f947" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="53ab2424-1a59-46e4-9e97-338ff6b2e4fe" name="Create User Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="93af7c69-0eb5-48e6-aabb-31ccf8aadc92" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success_Normal" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GS_GenUserData" id="fc710ef5-376f-4873-bc3e-d0cd57057503"><con:settings/><con:config><script>import java.text.SimpleDateFormat
+import java.util.UUID
+import java.security.SecureRandom
+
+def now = new Date()
+def fmt = new SimpleDateFormat("yyyyMMdd_HHmmss")
+def timeStr = fmt.format(now)
+
+// random suffix ngắn để tránh trùng
+def randomSuffix = UUID.randomUUID().toString().replace("-", "").substring(0, 6)
+
+// username: tối đa 150 ký tự, mình làm gọn gàng
+def username = "u_${timeStr}_${randomSuffix}"   // ví dụ: u_20251206_231530_ab12cd
+
+// email: dùng luôn username cho dễ trace
+def email = "${username}@testmail.com"
+
+// fullname: demo đơn giản, anh thích thì đổi
+def fullname = "User ${timeStr}"
+
+// password: random số cho đỡ trùng
+def rnd = new SecureRandom()
+def password = "Pass" + (100000 + rnd.nextInt(900000))  // Pass123456
+
+// firebase_id: chuỗi 16 số ngẫu nhiên (anh muốn 18–20 số thì tăng length lên)
+def firebaseIdLength = 16
+def firebaseId = (1..firebaseIdLength).collect { rnd.nextInt(10) }.join()
+
+// ===== Ghi vào Project Properties =====
+def project = context.testCase.testSuite.project
+project.setPropertyValue("username",    username)
+project.setPropertyValue("email",       email)
+project.setPropertyValue("fullname",    fullname)
+project.setPropertyValue("password",    password)
+project.setPropertyValue("firebase_id", firebaseId)
+
+// Log cho dễ debug
+log.info "Generated username   = ${username}"
+log.info "Generated email      = ${email}"
+log.info "Generated fullname   = ${fullname}"
+log.info "Generated password   = ${password}"
+log.info "Generated firebaseId = ${firebaseId}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="d5053bf5-d20e-404c-a8c7-96cf22b15d28"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/users/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="6c778627-aba2-4b39-842e-70237249749e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+  "username": "${#Project#username}",
+  "email": "${#Project#email}",
+  "fullname": "${#Project#fullname}",
+  "password": "${#Project#password}",
+  "firebase_id": "${#Project#firebase_id}"
+}</con:request><con:originalUri>http://localhost/api/users/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="81a9852d-65c1-438f-a396-51d57c65f947" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 import java.time.OffsetDateTime
 
 // ===== 1. Kiểm tra HTTP Status =====
@@ -264,7 +322,7 @@ try {
     OffsetDateTime.parse(data.created_at as String)
 } catch (Exception e) {
     assert false : "created_at không phải định dạng ISO-8601 hợp lệ: ${data.created_at}"
-}</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5a807293-6ef9-4f63-bcb2-0410015bbd82" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Success_UnicodeName" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Copy of TC_02_Success_UnicodeName" id="48cd23ab-6cc0-474a-9368-877ea1100ce2"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/users/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of TC_02_Success_UnicodeName" id="6c778627-aba2-4b39-842e-70237249749e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json; charset=UTF-8" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+}</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>username</con:name><con:value/></con:property><con:property><con:name>email</con:name><con:value/></con:property><con:property><con:name>fullname</con:name><con:value/></con:property><con:property><con:name>password</con:name><con:value/></con:property><con:property><con:name>firebaseId</con:name></con:property></con:properties></con:testCase><con:testCase id="5a807293-6ef9-4f63-bcb2-0410015bbd82" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Success_UnicodeName" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Copy of TC_02_Success_UnicodeName" id="48cd23ab-6cc0-474a-9368-877ea1100ce2"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/users/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of TC_02_Success_UnicodeName" id="6c778627-aba2-4b39-842e-70237249749e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json; charset=UTF-8" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
       "username": "huy_dep_traiii",
       "email": "230206657@vnu.edu.vn",
       "fullname": "Đào Quang Huy",
@@ -747,7 +805,7 @@ log.info "✔ SQL Injection/Special Characters test PASSED – API đã chặn u
 </scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="76fa36c9-9897-4e59-8863-4da7c1125489" name="Get User Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="26ee3bf6-f842-4db9-ae83-c5adf9013234" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="d34c7aa3-d707-408d-a531-ed8fe67ea480"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
-&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 
 // 1. HTTP status
 def status = messageExchange.responseStatusCode as Integer
@@ -778,27 +836,7 @@ assert json.data.fullname == expectedFullname : "Sai fullname. Expect=${expected
 def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
 sensitiveFields.each { f ->
     assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
-}</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:setupScript>def project = context.testCase.testSuite.project
-
-def authSuite = project.testSuites["Auth Testsuite"]
-if (!authSuite) {
-    log.error "Không tìm thấy TestSuite 'Auth Testsuite'"
-    return
-}
-
-def tcPostToken = authSuite.testCases["TC_01_Success"]
-if (!tcPostToken) {
-    log.error "Không tìm thấy TestCase 'TC_01_success'"
-    return
-}
-
-log.info ">>> [Setup] Chạy TC_01_success (Auth) để lấy token trước khi GET /user/me"
-
-def ctxMap = new com.eviware.soapui.support.types.StringToObjectMap()
-def result = tcPostToken.run(ctxMap, false)
-
-log.info "Kết quả chạy auth: " + result.status
-</con:setupScript><con:properties/></con:testCase><con:testCase id="ad7a005a-01d3-4d43-939a-fbe9dd5c6585" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_No Token_Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="ef785115-1b94-43a1-bd1d-be956c204c81"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="8afe295c-39a1-496f-8a75-d38d29456e81" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+}</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:setupScript/><con:properties/></con:testCase><con:testCase id="ad7a005a-01d3-4d43-939a-fbe9dd5c6585" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_No Token_Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="ef785115-1b94-43a1-bd1d-be956c204c81"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="8afe295c-39a1-496f-8a75-d38d29456e81" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 
 // 1. HTTP status phải là 401
 def status = messageExchange.responseStatusCode as Integer
@@ -835,27 +873,7 @@ assert msg.contains("token not valid") :
 
 assert json.data instanceof Map : "data phải là object {}"
 assert json.data.isEmpty()      : "data phải rỗng {}"
-</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e97e0813-2d4e-455a-97ae-46ff48a60775" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_Expired Token_Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="f249f602-46ba-4989-9a2d-de1b2c41340f"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
-  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
-  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
-&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="bf7c75f8-5e04-4414-aed8-4dc9c1267f48" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
-
-def status = messageExchange.responseStatusCode as Integer
-assert status == 401 : "Expected 401 but got ${status}"
-
-def body = messageExchange.response.responseContent
-def json = new JsonSlurper().parseText(body)
-
-assert json.success == false : "success phải = false"
-
-// chỉ cần message chứa cụm 'token not valid' là ok
-def msg = (json.message ?: "").toLowerCase()
-assert msg.contains("token not valid") :
-        "Sai message, expected contain 'token not valid', got: '${json.message}'"
-
-assert json.data instanceof Map : "data phải là object {}"
-assert json.data.isEmpty()      : "data phải rỗng {}"
-</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4b448ac2-20bb-45ce-86bb-2b3c2f6f30d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_05_NoSensitiveFields In Response" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="25760d33-24dd-4440-aa6d-a7c9b8a827cc"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4b448ac2-20bb-45ce-86bb-2b3c2f6f30d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_NoSensitiveFields In Response" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="25760d33-24dd-4440-aa6d-a7c9b8a827cc"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
 &lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="ead52b62-a855-41da-93e3-61fbe77b8310" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
@@ -902,16 +920,56 @@ def ctxMap = new com.eviware.soapui.support.types.StringToObjectMap()
 def result = tcPostToken.run(ctxMap, false)
 
 log.info "Kết quả chạy auth: " + result.status
-</con:setupScript><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="059d6340-6b5a-4d86-b553-a0691e336171" name="Put User Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b0c030d0-0ba5-4269-8ec7-3a5c9d9924b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="a0323144-52cc-4116-a4bb-796b6fedcbc0"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="cfccf2e1-70ff-4b4f-921b-280a4fc0e58e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+</con:setupScript><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="059d6340-6b5a-4d86-b553-a0691e336171" name="Put User Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b0c030d0-0ba5-4269-8ec7-3a5c9d9924b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GS_GenUpdateMeData" id="8bf3d375-f8af-4b7f-98fd-5050ba8c91f3"><con:settings/><con:config><script>import java.text.SimpleDateFormat
+import java.util.UUID
+import java.security.SecureRandom
+
+// Lấy username/password hiện tại từ Project (do Sign up / Login set)
+def p  = context.testCase.testSuite.project
+def username = p.getPropertyValue("username")
+def oldPass  = p.getPropertyValue("password")
+
+assert username : "Project#username đang rỗng – phải chạy Sign up/Login trước!"
+assert oldPass  : "Project#password đang rỗng – phải chạy Sign up/Login trước!"
+
+// Sinh dữ liệu mới
+def timeStr = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+def randomSuffix = UUID.randomUUID().toString().substring(0, 6)
+
+def newEmail    = "user_${timeStr}_${randomSuffix}@example.com"
+def newFullname = "User_${timeStr}"
+def newFirebase = "fb_${timeStr}"
+
+// 🔐 Sinh mật khẩu mới
+def rnd = new SecureRandom()
+def newPass = "Pass" + (100000 + rnd.nextInt(900000))  // VD: Pass123456
+
+// Ghi vào TestCase
+def tc = context.testCase
+tc.setPropertyValue("upd_username",    username)  // username giữ nguyên
+tc.setPropertyValue("upd_old_password", oldPass)  // để debug nếu cần
+tc.setPropertyValue("upd_new_password", newPass)
+tc.setPropertyValue("upd_email",       newEmail)
+tc.setPropertyValue("upd_fullname",    newFullname)
+tc.setPropertyValue("upd_firebase",    newFirebase)
+
+log.info "UpdateMe username        = ${username}"
+log.info "UpdateMe old_password    = ${oldPass}"
+log.info "UpdateMe NEW password    = ${newPass}"
+log.info "UpdateMe new_email       = ${newEmail}"
+log.info "UpdateMe new_fullname    = ${newFullname}"
+log.info "UpdateMe new_firebase    = ${newFirebase}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="a0323144-52cc-4116-a4bb-796b6fedcbc0"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="cfccf2e1-70ff-4b4f-921b-280a4fc0e58e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
 &lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
-  "username": "2hoanglinh111111",
-  "email": "user1616111zaza@example.com",
-  "fullname": "2hllll",
-  "password": "2hoanglinh",
-  "firebase_id": "686868686666"
-}</con:request><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="e88ff26e-24c2-4304-b8e7-ce7e95ab3aa9" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+  "username":   "${#TestCase#upd_username}",
+  "email":      "${#TestCase#upd_email}",
+  "fullname":   "${#TestCase#upd_fullname}",
+  "password":   "${#TestCase#upd_new_password}",
+  "firebase_id": "${#TestCase#upd_firebase}"
+}
+</con:request><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="e88ff26e-24c2-4304-b8e7-ce7e95ab3aa9" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 
 // 1. Kiểm tra HTTP status
 def status = messageExchange.responseStatusCode as Integer
@@ -983,7 +1041,7 @@ if (!data) {
 // Lấy project
 def project = context.testCase.testSuite.project
 
-// Gán USERNAME, EMAIL, FULLNAME từ response
+// Gán USERNAME, EMAIL, FULLNAME, FIREBASEID từ response
 if (data.username) {
     project.setPropertyValue("USERNAME", data.username.toString())
     log.info "Set USERNAME = ${data.username}"
@@ -999,20 +1057,22 @@ if (data.fullname) {
     log.info "Set FULLNAME = ${data.fullname}"
 }
 
-// Lấy PASSWORD từ request body (vì write_only nên không có trong response)
-def reqBody = restStep.testRequest.requestContent
-if (reqBody) {
-    try {
-        def reqJson = new JsonSlurper().parseText(reqBody)
-        if (reqJson.password) {
-            project.setPropertyValue("PASSWORD", reqJson.password.toString())
-            log.info "Set PASSWORD từ request body"
-        }
-    } catch (e) {
-        log.warn "Không parse được request body để lấy password: ${e.message}"
-    }
+if (data.firebase_id) {
+    project.setPropertyValue("FIREBASE_ID", data.firebase_id.toString())
+    log.info "Set FIREBASE_ID = ${data.firebase_id}"
 }
-</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cdb69e3a-47f1-40bb-b422-b6bf5ed57c29" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="01de917d-57a8-4821-94ff-689431af9e0c"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="cfccf2e1-70ff-4b4f-921b-280a4fc0e58e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+
+// Cập nhật PASSWORD từ TestCase property upd_new_password
+def tc = context.testCase
+def newPass = tc.getPropertyValue("upd_new_password")
+
+if (newPass) {
+    project.setPropertyValue("PASSWORD", newPass)
+    log.info "Set PASSWORD từ TestCase property 'upd_new_password'"
+} else {
+    log.warn "TestCase property 'upd_new_password' đang rỗng – không cập nhật PASSWORD"
+}
+</script></con:config></con:testStep><con:properties><con:property><con:name>upd_username</con:name><con:value>u_20251207_124742_b08e02</con:value></con:property><con:property><con:name>upd_old_password</con:name><con:value>Pass470382</con:value></con:property><con:property><con:name>upd_new_password</con:name><con:value>Pass744809</con:value></con:property><con:property><con:name>upd_email</con:name><con:value>user_20251207_164348_013ccd@example.com</con:value></con:property><con:property><con:name>upd_fullname</con:name><con:value>User_20251207_164348</con:value></con:property><con:property><con:name>upd_firebase</con:name><con:value>fb_20251207_164348</con:value></con:property></con:properties></con:testCase><con:testCase id="cdb69e3a-47f1-40bb-b422-b6bf5ed57c29" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="01de917d-57a8-4821-94ff-689431af9e0c"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="cfccf2e1-70ff-4b4f-921b-280a4fc0e58e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer 1234566"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
 &lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
@@ -1414,12 +1474,58 @@ assert json.message == "User not found" : "'message' phải = 'User not found', 
 // 4. Kiểm tra data là object rỗng {}
 assert json.data instanceof Map : "'data' phải là object, hiện tại = ${json.data?.getClass()}"
 assert json.data.isEmpty() : "'data' phải rỗng {}, hiện tại = ${json.data}"
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="63dc9d14-7dd6-4c1a-8420-afd916226a8b" name="Create Topic Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0f291244-d918-42d8-8519-8e5990b02f8f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="c6d7affa-b1d3-4c59-9972-948af4161188"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="63dc9d14-7dd6-4c1a-8420-afd916226a8b" name="Create Topic Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0f291244-d918-42d8-8519-8e5990b02f8f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="29423649-67d5-498e-9885-95bc5cc3709d"><con:settings/><con:config><script>import java.text.SimpleDateFormat
+import java.util.UUID
+import java.util.Collections
+
+// ===== 1. Generate topic title =====
+def now = new Date()
+def fmt = new SimpleDateFormat("yyyyMMdd_HHmmss")
+def timeStr = fmt.format(now)
+def randomSuffix = UUID.randomUUID().toString().substring(0, 6)
+def topicTitle = "tv_${timeStr}_${randomSuffix}"
+
+// ===== 2. Generate random Japanese word =====
+def allWords = [
+    "気持ち",
+    "花",
+    "花火",
+    "気分",
+    "嬉しい",
+    "悲しい",
+    "安い",
+    "高い",
+    "面白い",
+    "楽しい",
+    "忙しい",
+    "静か",
+    "にぎやか",
+    "暑い",
+    "寒い",
+    "新しい",
+    "古い",
+    "きれい",
+    "便利",
+    "有名"
+]
+
+// Shuffle + pick FIRST WORD as STRING
+Collections.shuffle(allWords)
+def topicWords = allWords[0]  
+
+// ===== 3. Save property =====
+def tc = context.testCase
+tc.setPropertyValue("topic_title", topicTitle)
+tc.setPropertyValue("topic_words", topicWords)
+
+log.info "Generated topic_title = ${topicTitle}"
+log.info "Generated topic_words = ${topicWords}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="c6d7affa-b1d3-4c59-9972-948af4161188"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
-&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
-    "title": "tv 3/12",
-    "words": "気持ち、花、花火"
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+  "title": "${#TestCase#topic_title}",
+  "words": "${#TestCase#topic_words}"
 }</con:request><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="a269c5f6-bebc-4f35-92f1-513e8cc7c5f6" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
 
 assert messageExchange.response, "Không có response trả về"
@@ -1444,7 +1550,30 @@ assert json.message == "Created" : "'message' phải = 'Created', hiện tại =
 
 // 4. (Optional) Data tồn tại
 assert json.containsKey("data") : "Response phải có field 'data'"
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6650682d-3641-4d9a-ba09-0b890ac042c3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="6949d9a7-09dd-4be0-a282-722af4402e63"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="JDBC GetTopicId" id="42686274-5536-4c56-b680-6ae73998538e"><con:settings><con:setting id="discardResponse">false</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT t.id AS topic_id
+FROM   notes_topic t
+JOIN   notes_note n
+       ON t.note_id = n.id
+WHERE  n.user_id = ${#Project#user_id}
+  AND  t.title    = '${#TestCase#topic_title}'
+ORDER BY t.id DESC
+LIMIT 1;
+</con:query><con:properties/></con:config></con:testStep><con:testStep type="groovy" name="GS SetTopicId" id="cf6217c5-6e92-417b-926e-7a58c1b064ee"><con:settings/><con:config><script>import groovy.xml.XmlSlurper
+
+def jdbc = context.testCase.testSteps["JDBC GetTopicId"]
+def xml = jdbc.getPropertyValue("ResponseAsXml")
+
+def root = new XmlSlurper().parseText(xml)
+def row  = root.ResultSet.Row[0]
+
+def topicId = row."NOTES_TOPIC.ID".text()
+
+assert topicId : "Không tìm thấy NOTES_TOPIC.ID trong JDBC!"
+
+context.testCase.testSuite.project.setPropertyValue("topic_id", topicId)
+
+log.info "=> Set Project.topic_id = ${topicId}"
+</script></con:config></con:testStep><con:properties><con:property><con:name>topic_title</con:name><con:value>tv_20251206_231023_5ca470</con:value></con:property><con:property><con:name>topic_words</con:name><con:value>楽しい</con:value></con:property></con:properties></con:testCase><con:testCase id="6650682d-3641-4d9a-ba09-0b890ac042c3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="6949d9a7-09dd-4be0-a282-722af4402e63"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
     "title": "tv 18/10 v5",
     "words": "気持ち、花"
 }</con:request><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6e49dca8-86a2-46f9-bdc1-0a042c2183c8" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
@@ -1731,4 +1860,1118 @@ try {
 assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
 assert json.message?.toLowerCase()?.contains("token not valid") : 
     "'message' phải chứa 'token not valid', hiện tại = '${json.message}'"
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>base_url</con:name><con:value>http://localhost:8000</con:value></con:property><con:property><con:name>username</con:name><con:value>dhhoang066</con:value></con:property><con:property><con:name>password</con:name><con:value>hoang123</con:value></con:property><con:property><con:name>access_token</con:name><con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NzgyODE5LCJpYXQiOjE3NjQ3ODI1MTksImp0aSI6ImNhYTcyYmI2ZjAwMjQ1NGRhMjMxZDdkMzI5NGJmOTEzIiwidXNlcl9pZCI6IjE4In0.N_qj31VHshY6IyvaDpQnEO55SuesK_1FkN6WcH19bt8</con:value></con:property><con:property><con:name>refresh_token</con:name><con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDg2ODkxOSwiaWF0IjoxNzY0NzgyNTE5LCJqdGkiOiI3ZGVmOTgyMWM0ZjM0OWI4YTkzYjczODdkMmEzMGI0ZCIsInVzZXJfaWQiOiIxOCJ9.jQCMTdwNlj-4XT8pHLPnbK4AwBK0KnI0vS-1GSsv10Y</con:value></con:property><con:property><con:name>topic_id</con:name><con:value>23</con:value></con:property><con:property><con:name>jdbc_driver</con:name><con:value>com.mysql.cj.jdbc.Driver</con:value></con:property><con:property><con:name>jdbc_conn</con:name><con:value>jdbc:mysql://localhost:3306/smartnote_local_db?user=root&amp;password=hoang123&amp;useSSL=false&amp;serverTimezone=UTC </con:value></con:property><con:property><con:name>current_user_id</con:name><con:value>16</con:value></con:property><con:property><con:name>current_username</con:name><con:value>huy_dep_traiii</con:value></con:property><con:property><con:name>current_email</con:name><con:value>230206657@vnu.edu.vn</con:value></con:property><con:property><con:name>current_fullname</con:name><con:value>Đào Quang Huy</con:value></con:property><con:property><con:name>current_firebase_id</con:name><con:value>88888888888888</con:value></con:property><con:property><con:name>user_id</con:name><con:value>18</con:value></con:property><con:property><con:name>email</con:name><con:value>23020666@example.com</con:value></con:property><con:property><con:name>fullname</con:name><con:value>Đào Huy Hoàng</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>Profile 1</con:name><con:accessToken/><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:accessTokenStatus>UNKNOWN</con:accessTokenStatus><con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer><con:oAuth1Profile><con:name>Profile 2</con:name><con:accessTokenPosition>HEADER</con:accessTokenPosition></con:oAuth1Profile></con:oAuth1ProfileContainer><con:sensitiveInformation/></con:soapui-project>
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="cedf55b2-f592-47c7-8760-e950b9e6a5e2" name="Get Search Topics Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c4148cf7-828a-40ed-af2d-ab0f6d0bc15f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="jdbc" name="JDBC GetRandomTopicTitle" id="c9c12255-43d1-4542-9e61-aa26d88d1c3b"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT t.title AS topic_title
+FROM   notes_topic t
+JOIN   notes_note n ON t.note_id = n.id
+WHERE  n.user_id = ${#Project#user_id}
+ORDER BY RAND()
+LIMIT 1;
+</con:query><con:assertion type="GroovyScriptAssertion" id="6f87f5a7-243a-486f-bda4-12dd88ff0e3d" name="Script Assertion"><con:configuration><scriptText>import groovy.xml.XmlSlurper
+
+// Lấy XML JDBC trả về
+def xmlText = messageExchange.responseContent       // nếu là Script Assertion
+// nếu là Groovy Step sau JDBC thì dùng:
+// def xmlText = context.testCase.testSteps["JDBC GetTopicTitle"].getPropertyValue("ResponseAsXml")
+
+log.info "JDBC_GetTopicTitle Response = ${xmlText}"
+
+// Parse XML
+def root = new XmlSlurper().parseText(xmlText)
+def row  = root.ResultSet.Row[0]
+assert row != null : "Không có dòng nào trong kết quả JDBC!"
+
+// Lấy giá trị &lt;NOTES_TOPIC.TITLE>
+def topicTitle = row."NOTES_TOPIC.TITLE".text()
+assert topicTitle : "Không đọc được NOTES_TOPIC.TITLE từ JDBC result!"
+
+// Gán vào Project property để dùng cho Search Topic
+def project = context.testCase.testSuite.project
+project.setPropertyValue("search_text", topicTitle)
+project.setPropertyValue("topic_title", topicTitle)
+
+log.info "Set Project#search_text = ${topicTitle}"
+log.info "Set Project#topic_title = ${topicTitle}"
+</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="groovy" name="GS SetSearchText" id="bcd3bc02-29d0-4f4d-869f-f1ba8fa82895"><con:settings/><con:config><script>import groovy.xml.XmlSlurper
+
+// Lấy step JDBC
+def jdbc = context.testCase.testSteps["JDBC GetRandomTopicTitle"]
+def xml  = jdbc.getPropertyValue("ResponseAsXml")
+log.info "RandomTopicTitle XML = ${xml}"
+
+// Parse XML
+def root = new XmlSlurper().parseText(xml)
+def row  = root.ResultSet.Row[0]
+assert row != null : "Không tìm thấy topic nào trong DB cho user này!"
+
+// Lấy giá trị &lt;NOTES_TOPIC.TITLE>
+def topicTitle = row."NOTES_TOPIC.TITLE".text()
+assert topicTitle : "Không đọc được NOTES_TOPIC.TITLE!"
+
+// Gán vào Project properties để dùng cho Search Topic / log
+def project = context.testCase.testSuite.project
+project.setPropertyValue("search_text", topicTitle)
+project.setPropertyValue("topic_title", topicTitle)
+
+log.info "Picked topic_title for search = ${topicTitle}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="622e63e3-e457-4712-a0c8-f7de6e41e8b6"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/search/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="829f4a89-4e5d-464a-870a-085b5e36baf1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/search/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="ff4fa8bf-4796-4f5d-9af3-67ca2676c69a" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Status phải = 200 cho case search thành công, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// 1. success + message
+assert json.success == true : "'success' phải = true, hiện tại = ${json.success}"
+assert json.message == "Fetched" : "'message' phải = 'Fetched', hiện tại = '${json.message}'"
+
+// 2. data phải là list, có ít nhất 1 kết quả
+assert json.data instanceof List : "'data' phải là list, hiện tại = ${json.data?.getClass()}"
+assert json.data.size() > 0 : "Search q='tv' phải trả về ít nhất 1 topic, hiện tại size = ${json.data.size()}"
+
+// 3. kiểm tra structure + title phải chứa 'tv'
+def query = "tv".toLowerCase()
+
+json.data.eachWithIndex { topic, idx ->
+    assert topic.id         != null : "Topic [${idx}] phải có 'id'"
+    assert topic.title      != null : "Topic [${idx}] phải có 'title'"
+    assert topic.vocas      != null : "Topic [${idx}] phải có 'vocas'"
+    assert topic.created_at != null : "Topic [${idx}] phải có 'created_at'"
+    assert topic.updated_at != null : "Topic [${idx}] phải có 'updated_at'"
+
+    // kiểu dữ liệu cơ bản
+    assert topic.id instanceof Number : "Topic [${idx}].id phải là Number, hiện tại = ${topic.id?.getClass()}"
+    assert topic.title instanceof String : "Topic [${idx}].title phải là String"
+    assert topic.vocas instanceof String : "Topic [${idx}].vocas phải là String"
+
+    // title phải chứa query 'tv' (case-insensitive)
+    def titleStr = topic.title.toString().toLowerCase()
+    assert titleStr.contains(query) :
+        "Topic [${idx}].title = '${topic.title}' không chứa query '${query}'"
+
+    // không có field nhạy cảm
+    def forbiddenKeys = ["note", "user", "voca_topics", "details"]
+    forbiddenKeys.each { key ->
+        assert !topic.containsKey(key) : "Topic [${idx}] không được chứa field nhạy cảm '${key}'"
+    }
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#search_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>q</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0b8ba48d-14cd-4edf-a41a-518bcb093cc3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_No Result" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="0b74c831-9b73-4113-9b02-28a5582745a1"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/search/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="829f4a89-4e5d-464a-870a-085b5e36baf1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/search/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="635649c9-31d5-4659-9cdb-cf11f0efc369" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Status phải = 200 cho case search không có kết quả, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == true : "'success' phải = true, hiện tại = ${json.success}"
+assert json.message == "Fetched" : "'message' phải = 'Fetched', hiện tại = '${json.message}'"
+
+assert json.data instanceof List : "'data' phải là list"
+assert json.data.size() == 0 : "Search q='xxxxx' thì 'data' phải rỗng, hiện tại size = ${json.data.size()}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="abc" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>q</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6ebd8995-3b51-4ea9-a08d-bfab1ee8f6e3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="7b66da83-01fd-4ef2-b469-ae05b98a8265"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/search/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6e49dca8-86a2-46f9-bdc1-0a042c2183c8" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case không có token, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+
+// check message chỉ cần chứa 1 cụm từ → đỡ cứng
+assert json.message?.toLowerCase()?.contains("authentication") : 
+    "'message' phải chứa 'Authentication', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#topic_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0b9243a4-dfc8-4c11-a887-feee16ef972d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="b3b7cd6b-d084-400b-af8d-992569fa43bb"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/search/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer 123"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="2629601d-8397-4102-8aa2-3480f97a1611" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case token không hợp lệ, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message?.toLowerCase()?.contains("token not valid") : 
+    "'message' phải chứa 'token not valid', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#topic_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="b7b53d82-0b69-44a9-bc62-7c92afde38d2" name="Get Topic By Id Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="08eae89c-9c67-45cb-8912-aa6d09b00fe3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="b8349068-4e5d-411f-915e-5879e3ae86f5"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="86b783fb-a66f-4c3a-8cd5-81c1b893b166" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6f8dc7f4-30e0-40d5-9c61-195137299a5f" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Status phải = 200 cho case get topic by id thành công, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// 1. success + message
+assert json.success == true : "'success' phải = true, hiện tại = ${json.success}"
+assert json.message == "Fetched" : "'message' phải = 'Fetched', hiện tại = '${json.message}'"
+
+// 2. data phải là object
+assert json.data instanceof Map : "'data' phải là object (Map), hiện tại = ${json.data?.getClass()}"
+
+def topic = json.data
+
+// 3. kiểm tra field bắt buộc
+assert topic.id         != null : "Topic phải có 'id'"
+assert topic.title      != null : "Topic phải có 'title'"
+assert topic.vocas      != null : "Topic phải có 'vocas'"
+assert topic.created_at != null : "Topic phải có 'created_at'"
+assert topic.updated_at != null : "Topic phải có 'updated_at'"
+
+// 4. kiểu dữ liệu cơ bản
+assert topic.id instanceof Number  : "'id' phải là Number, hiện tại = ${topic.id?.getClass()}"
+assert topic.title instanceof String : "'title' phải là String"
+assert topic.vocas instanceof String : "'vocas' phải là String"
+
+// 5. không trả về field nhạy cảm
+def forbiddenKeys = ["note", "user", "voca_topics", "details"]
+forbiddenKeys.each { key ->
+    assert !topic.containsKey(key) : "Topic không được chứa field nhạy cảm '${key}'"
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>topic_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1615600a-72e8-4287-9cf6-d4ae1a4027f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Not Found" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="4d278bf3-6582-4a20-ad39-344e9ed4b294"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="86b783fb-a66f-4c3a-8cd5-81c1b893b166" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="5dc0eda4-4082-40e5-a6ae-efc647056954" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 0. Có response không
+assert messageExchange.response, "Không có response trả về"
+
+// 1. Status code phải = 404
+def status = messageExchange.responseStatusCode as Integer
+assert status == 404 : "Status phải = 404 cho case topic không tồn tại, hiện tại = ${status}"
+
+// 2. Parse JSON
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// 3. Kiểm tra success + message
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message == "No Topic matches the given query." :
+    "'message' phải = 'No Topic matches the given query.', hiện tại = '${json.message}'"
+
+// 4. data phải là object rỗng
+assert json.data instanceof Map : "'data' phải là object (Map), hiện tại = ${json.data?.getClass()}"
+assert json.data.isEmpty() : "'data' phải rỗng {}, hiện tại = ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="topic_id" value="999" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d827d703-439d-44b1-b1b2-b47136b07440" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="e4aae5e8-5ecf-47d7-be0b-06d00a0d225a"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6e49dca8-86a2-46f9-bdc1-0a042c2183c8" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case không có token, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+
+// check message chỉ cần chứa 1 cụm từ → đỡ cứng
+assert json.message?.toLowerCase()?.contains("authentication") : 
+    "'message' phải chứa 'Authentication', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#topic_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0f96a946-ab81-441d-a4f5-0460af882d67" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="b2e39c87-da60-41e1-a22f-5d53dd827be3"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer 123"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="2629601d-8397-4102-8aa2-3480f97a1611" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case token không hợp lệ, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message?.toLowerCase()?.contains("token not valid") : 
+    "'message' phải chứa 'token not valid', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#topic_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="faa7de73-ece5-408e-b944-22d7d3b694ac" name="Post Add Word"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e779fc57-3ab4-4472-b0e6-37dfbc5fc6f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Gen_Word_Data" id="b23f4a5d-508b-4d64-ad8b-de5dd52975d7"><con:settings/><con:config><script>import java.util.Collections
+
+// ===== 1. List từ vựng để random =====
+def allWords = [
+    "気持ち",   // cảm xúc
+    "花",       // hoa
+    "花火",     // pháo hoa
+    "気分",     // tâm trạng
+    "嬉しい",   // vui
+    "悲しい",   // buồn
+    "安い",     // rẻ
+    "高い",     // đắt
+    "面白い",   // thú vị
+    "楽しい",   // vui vẻ
+    "忙しい",   // bận rộn
+    "静か",     // yên tĩnh
+    "にぎやか", // náo nhiệt
+    "暑い",     // nóng
+    "寒い",     // lạnh
+    "新しい",   // mới
+    "古い",     // cũ
+    "きれい",   // đẹp, sạch
+    "便利",     // tiện lợi
+    "有名"      // nổi tiếng
+]
+
+// Xáo trộn &amp; lấy 1 từ bất kỳ
+Collections.shuffle(allWords)
+def word = allWords[0]
+
+// ===== 2. Ghi vào Project property add_word =====
+def proj = context.testCase.testSuite.project
+proj.setPropertyValue("add_word", word)
+
+// Log cho dễ debug
+log.info "Generated add_word = ${word}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="ca4d4fbe-ebdf-4617-8657-88fa8b60a394"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/add-word/{add_word}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="a1358df6-7369-47ce-9b7e-c03c84cefd3c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/44/add-word/tata/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="23cb86c0-242e-4088-81a3-927f7820b6e7" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+// nếu backend trả 201 thì sửa lại 201
+assert status == 200 : "Status phải = 200 cho case add-word thành công, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// success + message
+assert json.success == true : "'success' phải = true, hiện tại = ${json.success}"
+assert json.message == "Words added successfully" :
+    "'message' phải = 'Words added successfully', hiện tại = '${json.message}'"
+
+// phải có field data (dù là chuỗi rỗng)
+assert json.containsKey("data") : "Response phải có field 'data'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>add_word</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="JDBC GetVocaId" id="ce7d7004-9c81-4ba8-8c07-e4e5214e65b2"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT id AS voca_id
+FROM notes_voca
+WHERE word = '${#Project#add_word}'
+LIMIT 1;
+</con:query><con:assertion type="GroovyScriptAssertion" id="e129a905-c84e-46ed-8e58-d1f65170db6c" name="Script Assertion"><con:configuration><scriptText>import groovy.xml.XmlSlurper
+
+// 1. Lấy XML JDBC trả về
+def xmlText = messageExchange.responseContent
+log.info "JDBC_GetVocaId Response = ${xmlText}"
+
+// 2. Parse XML
+def root = new XmlSlurper().parseText(xmlText)
+
+// 3. Lấy dòng đầu tiên (nếu có)
+def row = root.ResultSet.Row[0]
+assert row != null : "Không có dòng nào trong kết quả JDBC (không tìm thấy voca)"
+
+// 4. Lấy giá trị &lt;NOTES_VOCA.ID>
+def vocaId = row."NOTES_VOCA.ID".text()
+assert vocaId : "Không đọc được NOTES_VOCA.ID từ JDBC result!"
+
+// 5. (Tuỳ chọn) Ghi luôn vào Project property để dùng ở bước sau
+def project = context.testCase.testSuite.project
+project.setPropertyValue("add_word_id", vocaId)
+
+log.info "Assertion OK - voca_id = ${vocaId}"
+</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="JDBC CheckVocaTopic" id="1ab31432-4cc1-4bad-8528-bfe24733af58"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT COUNT(*) AS cnt
+FROM notes_vocatopic
+WHERE topic_id = ${#Project#topic_id}
+  AND voca_id  = ${#Project#add_word_id};
+</con:query><con:assertion type="GroovyScriptAssertion" id="4aece3c5-2971-4e95-b78c-27cf3cd4e5c7" name="Script Assertion"><con:configuration><scriptText>import groovy.xml.XmlSlurper
+
+def xml  = messageExchange.responseContent
+def root = new XmlSlurper().parseText(xml)
+def cnt  = root.ResultSet.Row[0].CNT.text() as Integer
+
+def topicId = context.expand('${#Project#topic_id}')
+def vocaId  = context.expand('${#Project#voca_id}')
+
+log.info "Check mapping: topic_id=${topicId}, voca_id=${vocaId}, count=${cnt}"
+
+assert cnt == 1 : "Không tìm thấy dòng mapping trong notes_vocatopic (topic_id=${topicId}, voca_id=${vocaId})"
+</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c92eec1f-d8b3-44ad-81cb-10f485742de7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Topic Not Found" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="c6f84d11-dfc8-4326-80ce-0fe1b55a1a57"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/add-word/{add_word}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="a1358df6-7369-47ce-9b7e-c03c84cefd3c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic/44/add-word/tata/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="a9b9d160-7f57-43fa-9a44-9d4755d54473" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 404 : "Status phải = 404 cho case topic không tồn tại, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message == "No Topic matches the given query." :
+    "'message' phải = 'No Topic matches the given query.', hiện tại = '${json.message}'"
+
+assert json.data instanceof Map : "'data' phải là object (Map)"
+assert json.data.isEmpty() : "'data' phải rỗng {}, hiện tại = ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="topic_id" value="999" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>add_word</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b5b26037-30aa-49ad-950d-d0f3c05bc02e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="02cccf91-4d14-49e5-8a50-735bd78862db"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/add-word/{add_word}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6e49dca8-86a2-46f9-bdc1-0a042c2183c8" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case không có token, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+
+// check message chỉ cần chứa 1 cụm từ → đỡ cứng
+assert json.message?.toLowerCase()?.contains("authentication") : 
+    "'message' phải chứa 'Authentication', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="q" value="${#Project#topic_text}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="46d97478-9ba7-4249-a5a9-e6035474058d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="565ea184-2290-47fd-9366-bbb9e461f8f2"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/add-word/{add_word}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer 123"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="2629601d-8397-4102-8aa2-3480f97a1611" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case token không hợp lệ, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message?.toLowerCase()?.contains("token not valid") : 
+    "'message' phải chứa 'token not valid', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="add_word" value="${#Project#add_word}"/>
+  <con:entry key="q" value="${#Project#topic_text}"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="9c703d96-c271-4d45-b735-40db1e9636bc" name="Del Word"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0e364209-66f2-4ab8-b9a2-e8a5338dbbf8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_01_Success" searchProperties="true"><con:settings/><con:testStep type="jdbc" name="JDBC GetVocaIds" id="0445e892-88c5-4251-be43-08e7cf0ec1ff"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT vt.id  AS voca_topic_id,
+       vd.id  AS voca_detail_id
+FROM   notes_vocatopic vt
+JOIN   notes_voca v
+       ON vt.voca_id = v.id
+JOIN   notes_vocadetail vd
+       ON vd.voca_topic_id = vt.id
+WHERE  vt.topic_id = ${#Project#topic_id}
+  AND  v.word      = '${#Project#add_word}'
+ORDER BY vd.id DESC
+LIMIT 1;
+</con:query><con:properties/></con:config></con:testStep><con:testStep type="groovy" name="GS SetVocaIds" id="7de0fe14-8ef1-4615-973d-fcf7fd4eac89"><con:settings/><con:config><script>import groovy.xml.XmlSlurper
+
+// Lấy step JDBC – TÊN PHẢI TRÙNG 100% VỚI STEP CỦA ANH
+def jdbc = context.testCase.testSteps["JDBC GetVocaIds"]
+
+// Lấy XML kết quả
+def xmlText = jdbc.getPropertyValue("ResponseAsXml")
+log.info "JDBC_GetVocaIds ResponseAsXml = ${xmlText}"
+
+// Parse XML
+def root = new XmlSlurper().parseText(xmlText)
+def row  = root.ResultSet.Row[0]
+
+// Lấy 2 ID từ tag có dấu chấm
+def vocaTopicId  = row."NOTES_VOCATOPIC.ID".text()
+def vocaDetailId = row."NOTES_VOCADETAIL.ID".text()
+
+assert vocaTopicId  : "Không lấy được NOTES_VOCATOPIC.ID!"
+assert vocaDetailId : "Không lấy được NOTES_VOCADETAIL.ID!"
+
+// Gán vào Project properties
+def project = context.testCase.testSuite.project
+project.setPropertyValue("vocal_topic_id",  vocaTopicId)
+project.setPropertyValue("vocal_detail_id", vocaDetailId)
+
+log.info "Set Project#voca_topic_id  = ${vocaTopicId}"
+log.info "Set Project#voca_detail_id = ${vocaDetailId}"
+</script></con:config></con:testStep><con:testStep type="restrequest" name="REST Request" id="9aeac17e-9260-41a4-9375-f70217bfa4d0"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="b61ca1b8-2714-4776-98bd-b650cba7f63f" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def status = messageExchange.responseHeaders['#status#'][0]
+assert status.contains('200') : "Expected 200, got: ${status}"
+
+def raw = messageExchange.response.responseContent
+assert raw : "Empty response"
+
+def json = new JsonSlurper().parseText(raw)
+
+assert json.success == true : "success != true : ${json.success}"
+assert json.message == "Deleted" : "message != 'Deleted' : ${json.message}"
+assert json.data instanceof Map : "data must be object, got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "data must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="vocal_detail_id" value="${#Project#vocal_detail_id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="JDBC CheckDeleted" id="b6f232df-34fb-4cc5-8e2a-90ebeaf7d9a7"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>${#Project#jdbc_driver}</con:driver><con:connectionString>${#Project#jdbc_conn}</con:connectionString><con:query>SELECT COUNT(*) AS cnt
+FROM   notes_vocadetail vd
+JOIN   notes_vocatopic vt ON vd.voca_topic_id = vt.id
+WHERE  vd.id = ${#Project#vocal_detail_id}
+  AND  vt.id = ${#Project#vocal_topic_id};
+</con:query><con:assertion type="GroovyScriptAssertion" id="056ff655-d8d0-47fe-9268-3195c34d5e33" name="Script Assertion"><con:configuration><scriptText>import groovy.xml.XmlSlurper
+
+// JDBC trả về XML trong messageExchange.responseContent
+def xml  = messageExchange.responseContent
+def root = new XmlSlurper().parseText(xml)
+
+// Lấy COUNT(*) alias CNT
+def row = root.ResultSet.Row[0]
+def cnt = row.CNT.text() as Integer   // &lt;CNT>0&lt;/CNT>
+
+log.info "DB count for deleted voca_detail = ${cnt}"
+
+// Mong muốn: không còn bản ghi nào
+assert cnt == 0 : "Expected 0 record after delete, but found ${cnt} in DB"
+</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5be53710-2fe0-47dc-957e-a0c06b34ba83" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_02_Topic Not Found" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="4644e2d0-a5f9-45ac-bf9b-f801983d24c5"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="ef3873f6-41c6-4915-b75c-0f73ebd47845" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. Kiểm tra status code (giả sử API trả 404 Not Found)
+// Nếu backend dùng 400 thì đổi '404' thành '400' là được.
+def statusLine = messageExchange.responseHeaders['#status#'][0]   // vd: "HTTP/1.1 404 Not Found"
+assert statusLine.contains('404') : "Expected status 404 but got: ${statusLine}"
+
+// 2. Lấy response body
+def raw = messageExchange.response.responseContent
+assert raw : "Response body is empty"
+
+// 3. Parse JSON
+def json = new JsonSlurper().parseText(raw)
+
+// 4. success phải = false
+assert json.success == false : "Field 'success' must be false but got: ${json.success}"
+
+// 5. message phải đúng nội dung
+assert json.message == "No Topic matches the given query." : 
+       "Field 'message' must be 'No Topic matches the given query.' but got: ${json.message}"
+
+// 6. data phải là object rỗng {}
+assert json.data instanceof Map : "Field 'data' must be an object but got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "Field 'data' must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="${#Project#vocal_topic_id}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="999"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0b272d81-946f-4989-be71-67e07d6d9611" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_03_Voca Topic Not Belong To Topic" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="3f6182da-c5e6-4ae5-b08d-68cb476bf148"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c5410358-6328-456b-b350-a9799a0a1bab" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. Kiểm tra status code (giả sử API trả 404 Not Found)
+// Nếu backend trả 400 thì đổi '404' thành '400' là được.
+def statusLine = messageExchange.responseHeaders['#status#'][0]   // ví dụ: "HTTP/1.1 404 Not Found"
+assert statusLine.contains('404') : "Expected status 404 but got: ${statusLine}"
+
+// 2. Lấy response body
+def raw = messageExchange.response.responseContent
+assert raw : "Response body is empty"
+
+// 3. Parse JSON
+def json = new JsonSlurper().parseText(raw)
+
+// 4. success phải = false
+assert json.success == false : "Field 'success' must be false but got: ${json.success}"
+
+// 5. message phải đúng nội dung
+assert json.message == "No VocaTopic matches the given query." :
+       "Field 'message' must be 'No VocaTopic matches the given query.' but got: ${json.message}"
+
+// 6. data phải là object rỗng {}
+assert json.data instanceof Map : "Field 'data' must be an object but got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "Field 'data' must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="49"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="${#Project#topic_id}"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="404e2b0f-1da4-478b-b322-5737376bb9b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_04_Voca Detail Not Found" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="d2fa203a-f004-4771-a2d4-406efc4017d9"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="98ff9d2f-4bf7-4960-9fa8-7a3b2b679605" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// Lấy body
+def raw = messageExchange.response.responseContent
+assert raw : "Response body is empty"
+
+// Parse JSON
+def json = new JsonSlurper().parseText(raw)
+
+// success phải = false
+assert json.success == false : "Expected success=false but got: ${json.success}"
+
+// message đúng nội dung
+assert json.message == "No VocaDetail matches the given query." :
+       "Unexpected message: ${json.message}"
+
+// data phải là object rỗng {}
+assert json.data instanceof Map : "data must be an object but got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "data must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="${#Project#vocal_topic_id}"/>
+  <con:entry key="vocal_detail_id" value="99"/>
+  <con:entry key="topic_id" value="${#Project#topic_id}"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="56d77635-2644-4b8d-990a-678e822c58b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_05_Delete Twice" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request 1" id="e2413e53-f057-4869-803f-2587e0eb3cb1"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request 1" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="e10c1b43-59b9-4e08-9e66-1039a9497fd3" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def status = messageExchange.responseHeaders['#status#'][0]
+assert status.contains('200') : "Expected 200, got: ${status}"
+
+def raw = messageExchange.response.responseContent
+assert raw : "Empty response"
+
+def json = new JsonSlurper().parseText(raw)
+
+assert json.success == true : "success != true : ${json.success}"
+assert json.message == "Deleted" : "message != 'Deleted' : ${json.message}"
+assert json.data instanceof Map : "data must be object, got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "data must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="${#Project#vocal_topic_id}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="${#Project#topic_id}"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="REST Request 2" id="9e8d5cfb-6806-4c41-8771-d9f8ca9fad7d"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request 2" id="d73acd70-4e91-4e83-af99-633e1ae78d94" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topic//delete-word///</con:originalUri><con:assertion type="GroovyScriptAssertion" id="f00d2c26-859a-48ee-8d23-ccdfbebb700d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// Lấy body
+def raw = messageExchange.response.responseContent
+assert raw : "Response body is empty"
+
+// Parse JSON
+def json = new JsonSlurper().parseText(raw)
+
+// success phải = false
+assert json.success == false : "Expected success=false but got: ${json.success}"
+
+// message đúng nội dung
+assert json.message == "No VocaDetail matches the given query." :
+       "Unexpected message: ${json.message}"
+
+// data phải là object rỗng {}
+assert json.data instanceof Map : "data must be an object but got: ${json.data?.getClass()}"
+assert json.data.isEmpty() : "data must be {} but got: ${json.data}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="vocal_topic_id" value="${#Project#vocal_topic_id}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="${#Project#topic_id}"/>
+</con:parameters><con:parameterOrder><con:entry>topic_id</con:entry><con:entry>vocal_topic_id</con:entry><con:entry>vocal_detail_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e322f3c8-7066-444c-901d-ba6315be43e6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_06_NoToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="4a6467b0-5af8-4c0b-a540-5a356d85bf69"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="6e49dca8-86a2-46f9-bdc1-0a042c2183c8" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case không có token, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+
+// check message chỉ cần chứa 1 cụm từ → đỡ cứng
+assert json.message?.toLowerCase()?.contains("authentication") : 
+    "'message' phải chứa 'Authentication', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="add_word" value="${#Project#add_word}"/>
+  <con:entry key="q" value="${#Project#topic_text}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="{topic_id"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0a89cc61-912b-48f2-85e7-e079c45001d7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_07_InvalidToken Unauthorized" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="20bd92a0-ae4c-42b7-8905-36d8deccf9a2"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topic/{topic_id}/delete-word/{vocal_topic_id}/{vocal_detail_id}/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer 123"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="2629601d-8397-4102-8aa2-3480f97a1611" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+assert status == 401 : "Status phải = 401 cho case token không hợp lệ, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message?.toLowerCase()?.contains("token not valid") : 
+    "'message' phải chứa 'token not valid', hiện tại = '${json.message}'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="add_word" value="${#Project#add_word}"/>
+  <con:entry key="q" value="${#Project#topic_text}"/>
+  <con:entry key="vocal_detail_id" value="${#Project#vocal_detail_id}"/>
+  <con:entry key="topic_id" value="{topic_id"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="7014bc37-5add-4c14-b0dc-5cf5cd289708" name="Workflow Testsuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3efb2477-dbc3-4b52-b380-91b5e0219d9f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_01_SignUp_LoginFail_CreateTopic" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="calltestcase" name="Sign up" id="e3c6e268-3342-4de2-81a6-8edc94a25869"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>93af7c69-0eb5-48e6-aabb-31ccf8aadc92</con:targetTestCase><con:properties><con:property><con:name>username</con:name></con:property><con:property><con:name>email</con:name></con:property><con:property><con:name>fullname</con:name></con:property><con:property><con:name>password</con:name></con:property><con:property><con:name>firebaseId</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="Login fail (Wrong Username/password)" id="6b1276ce-2bda-4b71-ac53-fc112db0384c"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/token/" methodName="Token 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Login fail" id="4d7d7387-4905-4b63-940c-e2643451e8b4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000/</con:endpoint><con:request>{ "username": "hhhhhh", "password": "${#Project#password}" }</con:request><con:originalUri>http://localhost//api/token/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="407076fe-de7f-4af2-8804-52544c11fefa" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def response = messageExchange.responseContent
+assert response : "Response rỗng hoặc không nhận được response!"
+
+def json = new JsonSlurper().parseText(response)
+
+// --- Kiểm tra field tồn tại ---
+assert json.access != null : "Thiếu access token trong response!"
+assert json.refresh != null : "Thiếu refresh token trong response!"
+
+// --- Kiểm tra token không rỗng ---
+assert json.access.toString().trim().length() > 0 : "Access token rỗng!"
+assert json.refresh.toString().trim().length() > 0 : "Refresh token rỗng!"
+
+// --- Kiểm tra token có độ dài hợp lý (thường JWT ≥ 30 ký tự) ---
+assert json.access.size() >= 30 : "Access token quá ngắn – có thể sai format!"
+assert json.refresh.size() >= 30 : "Refresh token quá ngắn – có thể sai format!"
+
+log.info " Token hợp lệ – Access &amp; Refresh OK!"
+</scriptText></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="83ebc32b-6eeb-4454-9214-23f5f94cb913" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="81e54bf1-9dbf-493f-9f8e-fc88c944f9e1" name="Not Contains"><con:configuration><token>$.errors</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="calltestcase" name="Create topic" id="0f29dd9b-08ad-499a-96b0-71a64ac7ecd0"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0f291244-d918-42d8-8519-8e5990b02f8f</con:targetTestCase><con:properties><con:property><con:name>topic_title</con:name></con:property><con:property><con:name>topic_words</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a57ca016-745c-49c5-8a11-670bebc90e25" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_02_SignUp_Login_CreateTopic_AddWord_GetTopic" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Sign up" id="d90c8a80-fbba-4d30-a0f0-1b03a6be61c8"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>93af7c69-0eb5-48e6-aabb-31ccf8aadc92</con:targetTestCase><con:properties><con:property><con:name>username</con:name></con:property><con:property><con:name>email</con:name></con:property><con:property><con:name>fullname</con:name></con:property><con:property><con:name>password</con:name></con:property><con:property><con:name>firebaseId</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Login" id="e0dad9f8-8f6b-45a6-a46d-8ad703181783"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Create Topic" id="a72cb385-b17a-4dc7-b589-26e4a5d287b7"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0f291244-d918-42d8-8519-8e5990b02f8f</con:targetTestCase><con:properties><con:property><con:name>topic_title</con:name></con:property><con:property><con:name>topic_words</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Add Work" id="25b1eea9-48ac-426a-82e0-7baf2c60d51f"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e779fc57-3ab4-4472-b0e6-37dfbc5fc6f6</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Get Topic" id="27c86f28-a55c-458d-964e-9d97143693e0"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>08eae89c-9c67-45cb-8912-aa6d09b00fe3</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ce34cbbe-93d6-4350-85a6-2de1eddd99d2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_03_Login_CreateTopic_AddWord_DeleteWord" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Login" id="f08b10ae-6a5e-47a4-ba40-cdf54a9fbe01"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Create Topic" id="7a7a4e3f-51ce-4616-9f1d-0ebcea271b32"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0f291244-d918-42d8-8519-8e5990b02f8f</con:targetTestCase><con:properties><con:property><con:name>topic_title</con:name></con:property><con:property><con:name>topic_words</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Add Word" id="4fb6b82d-d39e-4bc8-9895-ea8c5fdb09bf"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e779fc57-3ab4-4472-b0e6-37dfbc5fc6f6</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Delete Word" id="69c2cf1f-d2cf-4e67-94ad-a7bafdac077c"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0e364209-66f2-4ab8-b9a2-e8a5338dbbf8</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:properties><con:property><con:name>topic_title</con:name><con:value/></con:property><con:property><con:name>topic_words</con:name><con:value/></con:property></con:properties></con:testCase><con:testCase id="05833509-aeea-445f-b458-1bb02a8c5a3a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_04_Login_CreateTopic Fail_AddWord_DeleteWord" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Login" id="4df24120-d759-4cbe-9f7d-60e4a29235f8"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="Create Topic Fail ( Duplicate Title)" id="0f39a791-a7dc-4b4e-874f-5df507725a0f"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/topics/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Create Topic Fail ( Duplicate Title)" id="3fd2a497-2a5e-4626-b05d-fa9561c14e56" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+    "title": "tv_20251207_124743_9227e7",
+    "words": "気持ち、花"
+}</con:request><con:originalUri>http://localhost/api/topics/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="5ff7b00e-b929-40bb-b728-706ae7a66f4d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 0. Có response không
+assert messageExchange.response, "Không có response trả về"
+
+// 1. Kiểm tra HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 400 : "Status phải = 400 cho case duplicate title, hiện tại = ${status}"
+
+// 2. Lấy body &amp; parse JSON
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// 3. Kiểm tra success + message
+assert json.success == false : "'success' phải = false, hiện tại = ${json.success}"
+assert json.message == "Validation error" : 
+    "'message' phải = 'Validation error', hiện tại = '${json.message}'"
+
+// 4. Kiểm tra errors.title
+assert json.errors : "Response phải có field 'errors'"
+assert json.errors.title : "errors phải có key 'title'"
+
+def titleErrors = json.errors.title
+assert titleErrors instanceof List &amp;&amp; titleErrors.size() > 0 : "errors.title phải là list và không rỗng"
+
+assert titleErrors[0] == "Title already exists in this note." :
+    "Thông báo lỗi title sai, hiện tại = '${titleErrors[0]}'"
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="3b382e4e-4a7d-4ccf-8077-e6de8583343c" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+assert messageExchange.response, "Không có response trả về"
+
+def status = messageExchange.responseStatusCode as Integer
+// Nếu API anh trả 200 thì đổi lại 200.
+assert status == 201 : "Status phải = 201 cho case tạo thành công, hiện tại = ${status}"
+
+def body = messageExchange.responseContent
+assert body : "Response body rỗng"
+
+def json
+try {
+    json = new JsonSlurper().parseText(body)
+} catch (e) {
+    assert false : "Response không phải JSON hợp lệ: ${e.message}\nBody: ${body}"
+}
+
+// 3. Kiểm tra success + message
+assert json.success == true : "'success' phải = true, hiện tại = ${json.success}"
+assert json.message == "Created" : "'message' phải = 'Created', hiện tại = '${json.message}'"
+
+// 4. (Optional) Data tồn tại
+assert json.containsKey("data") : "Response phải có field 'data'"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="calltestcase" name="Add Word" id="a808ba15-12e5-41fe-a72a-00295d89f7ba"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e779fc57-3ab4-4472-b0e6-37dfbc5fc6f6</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Delete Word" id="b45767a7-7d3e-42bb-ad06-0dfecd7a1b75"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0e364209-66f2-4ab8-b9a2-e8a5338dbbf8</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:properties><con:property><con:name>topic_title</con:name><con:value/></con:property><con:property><con:name>topic_words</con:name><con:value/></con:property></con:properties></con:testCase><con:testCase id="7e6c0d53-335a-4c83-a8a8-a2f7be5694ed" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_05_Login_SearchTopic_AddWord_DeleteWord" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Login" id="e4afd9f5-be89-4d1e-9aa2-1c992c8f414b"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Search Topic" id="7ca4d315-fbf8-4875-85e1-1b27fb953cbf"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>c4148cf7-828a-40ed-af2d-ab0f6d0bc15f</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Add Word" id="da0480ce-9989-4fd7-beb5-f9b29b653582"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e779fc57-3ab4-4472-b0e6-37dfbc5fc6f6</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="Delete Word" id="65ece81a-8398-4c63-b84b-e6d8e00ac813"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>0e364209-66f2-4ab8-b9a2-e8a5338dbbf8</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:properties><con:property><con:name>topic_title</con:name><con:value/></con:property><con:property><con:name>topic_words</con:name><con:value/></con:property></con:properties></con:testCase><con:testCase id="25c83c45-3698-4282-994b-9d896f166c7d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_06_Login_GetInfor_UpdateInfor_GetInfor" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Login" id="130bdb1b-17e4-4bb9-ac94-7322e6b71da1"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="Get Infor 1" id="395603b8-9e2d-41dd-a42a-fbdb5fa6ad74"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get infor 1" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Expected 200 but got ${status}"
+
+// 2. Parse JSON
+def body = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(body)
+
+// 3. Các field cơ bản
+assert json.success == true : "success phải true"
+assert json.message == "Fetched" : "message phải là 'Fetched' nhưng hiện tại là '${json.message}'"
+
+// 4. Lấy expected từ Project (do JDBC step set trước đó)
+def expectedUsername = context.expand('${#Project#username}')
+def expectedEmail    = context.expand('${#Project#email}')
+def expectedFullname = context.expand('${#Project#fullname}')
+
+// 5. Check data
+assert json.data != null : "data không được null"
+assert json.data.id instanceof Integer
+
+assert json.data.username == expectedUsername : "Sai username. Expect=${expectedUsername}, Got=${json.data.username}"
+assert json.data.email == expectedEmail       : "Sai email. Expect=${expectedEmail}, Got=${json.data.email}"
+assert json.data.fullname == expectedFullname : "Sai fullname. Expect=${expectedFullname}, Got=${json.data.fullname}"
+
+// (optional) 6. Không lộ field nhạy cảm
+def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
+sensitiveFields.each { f ->
+    assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
+}</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6182644b-caf4-4318-9738-1973cd6af26a" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def body = messageExchange.responseContent
+def json = new JsonSlurper().parseText(body)
+def data = json.data
+
+def tc = context.testCase
+
+// Lưu lại thông tin cũ
+tc.setPropertyValue("old_username",   data.username?.toString() ?: "")
+tc.setPropertyValue("old_email",      data.email?.toString() ?: "")
+tc.setPropertyValue("old_fullname",   data.fullname?.toString() ?: "")
+tc.setPropertyValue("old_firebase",   data.firebase_id?.toString() ?: "")
+
+log.info "Saved old info: username=${data.username}, email=${data.email}, fullname=${data.fullname}, firebase_id=${data.firebase_id}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="calltestcase" name="Update Infor" id="a56b80c5-7923-47e7-be77-e988cb0afc2b"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>b0c030d0-0ba5-4269-8ec7-3a5c9d9924b7</con:targetTestCase><con:properties><con:property><con:name>upd_username</con:name></con:property><con:property><con:name>upd_old_password</con:name></con:property><con:property><con:name>upd_new_password</con:name></con:property><con:property><con:name>upd_email</con:name></con:property><con:property><con:name>upd_fullname</con:name></con:property><con:property><con:name>upd_firebase</con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="Get Infor 2" id="98f0b902-f565-4975-9cbb-a25f93257d7b"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get Infor 2" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Expected 200 but got ${status}"
+
+// 2. Parse JSON
+def body = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(body)
+
+// 3. Các field cơ bản
+assert json.success == true : "success phải true"
+assert json.message == "Fetched" : "message phải là 'Fetched' nhưng hiện tại là '${json.message}'"
+
+// 4. Lấy expected từ Project (do JDBC step set trước đó)
+def expectedUsername = context.expand('${#Project#username}')
+def expectedEmail    = context.expand('${#Project#email}')
+def expectedFullname = context.expand('${#Project#fullname}')
+
+// 5. Check data
+assert json.data != null : "data không được null"
+assert json.data.id instanceof Integer
+
+assert json.data.username == expectedUsername : "Sai username. Expect=${expectedUsername}, Got=${json.data.username}"
+assert json.data.email == expectedEmail       : "Sai email. Expect=${expectedEmail}, Got=${json.data.email}"
+assert json.data.fullname == expectedFullname : "Sai fullname. Expect=${expectedFullname}, Got=${json.data.fullname}"
+
+// (optional) 6. Không lộ field nhạy cảm
+def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
+sensitiveFields.each { f ->
+    assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
+}</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7378ca09-27d7-4989-a98f-4f739ca51867" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def body = messageExchange.responseContent
+def json = new JsonSlurper().parseText(body)
+def data = json.data
+
+def tc = context.testCase
+
+def oldUsername = tc.getPropertyValue("old_username")
+def oldEmail    = tc.getPropertyValue("old_email")
+def oldFullname = tc.getPropertyValue("old_fullname")
+def oldFirebase = tc.getPropertyValue("old_firebase")
+
+log.info "Old fullname   = ${oldFullname} | New fullname   = ${data.fullname}"
+log.info "Old email      = ${oldEmail}    | New email      = ${data.email}"
+log.info "Old firebase   = ${oldFirebase} | New firebase   = ${data.firebase_id}"
+
+// Ví dụ: username giữ nguyên
+assert data.username?.toString() == oldUsername : "USERNAME sau update bị đổi, không mong muốn!"
+
+// Các field còn lại PHẢI khác (vì anh vừa update)
+assert data.fullname?.toString()   != oldFullname : "FULLNAME không thay đổi sau update!"
+assert data.email?.toString()      != oldEmail    : "EMAIL không thay đổi sau update!"
+assert data.firebase_id?.toString() != oldFirebase : "FIREBASE_ID không thay đổi sau update!"
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>old_username</con:name><con:value>u_20251207_124742_b08e02</con:value></con:property><con:property><con:name>old_email</con:name><con:value>user_20251207_164348_013ccd@example.com</con:value></con:property><con:property><con:name>old_fullname</con:name><con:value>User_20251207_164348</con:value></con:property><con:property><con:name>old_firebase</con:name><con:value>fb_20251207_164348</con:value></con:property></con:properties></con:testCase><con:testCase id="8791b212-0b28-4f89-87ec-a9d0847a60c5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_FLOW_07_Login_GetInfor_UpdateInforFail_GetInfor" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="Login" id="107521d1-6fe6-4736-99ef-3b01b7abeec1"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>e89225f9-fb5d-4132-b399-c69c08f32706</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="Get Infor 1" id="35903c58-687d-4647-ab6e-bff66884bdbd"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get Infor 1" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Expected 200 but got ${status}"
+
+// 2. Parse JSON
+def body = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(body)
+
+// 3. Các field cơ bản
+assert json.success == true : "success phải true"
+assert json.message == "Fetched" : "message phải là 'Fetched' nhưng hiện tại là '${json.message}'"
+
+// 4. Lấy expected từ Project (do JDBC step set trước đó)
+def expectedUsername = context.expand('${#Project#username}')
+def expectedEmail    = context.expand('${#Project#email}')
+def expectedFullname = context.expand('${#Project#fullname}')
+
+// 5. Check data
+assert json.data != null : "data không được null"
+assert json.data.id instanceof Integer
+
+assert json.data.username == expectedUsername : "Sai username. Expect=${expectedUsername}, Got=${json.data.username}"
+assert json.data.email == expectedEmail       : "Sai email. Expect=${expectedEmail}, Got=${json.data.email}"
+assert json.data.fullname == expectedFullname : "Sai fullname. Expect=${expectedFullname}, Got=${json.data.fullname}"
+
+// (optional) 6. Không lộ field nhạy cảm
+def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
+sensitiveFields.each { f ->
+    assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
+}</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6182644b-caf4-4318-9738-1973cd6af26a" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def body = messageExchange.responseContent
+def json = new JsonSlurper().parseText(body)
+def data = json.data
+
+def tc = context.testCase
+
+// Lưu lại thông tin cũ
+tc.setPropertyValue("old_username",   data.username?.toString() ?: "")
+tc.setPropertyValue("old_email",      data.email?.toString() ?: "")
+tc.setPropertyValue("old_fullname",   data.fullname?.toString() ?: "")
+tc.setPropertyValue("old_firebase",   data.firebase_id?.toString() ?: "")
+
+log.info "Saved old info: username=${data.username}, email=${data.email}, fullname=${data.fullname}, firebase_id=${data.firebase_id}"
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Update Infor Fail (Invalid Email Format)" id="4cab4a19-2f86-4b75-9508-d757fdd2e39b"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Infor Fail (Invalid Email Format)" id="6c778627-aba2-4b39-842e-70237249749e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request>{
+      "username": "${#Project#username}",
+      "email": "23020666",
+      "fullname": "Đào Huy Hoàng",
+      "password": "hoang123####",
+      "firebase_id": "666666666666666sssiizzzzaa"
+}</con:request><con:originalUri>http://localhost/api/users/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="7fbf16bb-7db4-4d99-8db8-ff5231d19e2f" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// ==== 1. Kiểm tra HTTP status ====
+def status = messageExchange.responseStatusCode as Integer
+assert status == 400 || status == 422 :
+        "Expected HTTP 400/422 cho case email sai format, nhưng nhận ${status}"
+
+// ==== 2. Parse JSON response ====
+def raw = messageExchange.responseContent
+assert raw : "Response rỗng!"
+
+def json = new JsonSlurper().parseText(raw)
+
+// ==== 3. Kiểm tra các field chính ====
+assert json.success == false :
+        "Case email sai format thì success phải = false, hiện = ${json.success}"
+
+assert json.message == "Validation error" :
+        "message phải = 'Validation error', hiện = '${json.message}'"
+
+// data phải là object rỗng
+assert json.data instanceof Map &amp;&amp; json.data.isEmpty() :
+        "data phải là {} rỗng, hiện = ${json.data}"
+
+// ==== 4. Kiểm tra lỗi cho field email ====
+assert json.errors != null : "Trường errors không được null"
+assert json.errors.email != null :
+        "errors phải có key 'email'"
+assert json.errors.email instanceof List &amp;&amp; json.errors.email.size() > 0 :
+        "errors.email phải là list chứa ít nhất 1 message, hiện = ${json.errors.email}"
+
+def firstMsg = json.errors.email[0] as String
+assert firstMsg == "Enter a valid email address." :
+        "Thông báo lỗi email sai. Expected 'Enter a valid email address.', got '${firstMsg}'"
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="e33205c0-06fa-4d12-9fa5-fe12fc1511f9" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. Kiểm tra HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Expected HTTP 200 but got ${status}"
+
+// 2. Lấy response body
+def rawBody = messageExchange.response.contentAsString
+assert rawBody : "Response body is empty"
+
+// 3. Parse JSON
+def json
+try {
+    json = new JsonSlurper().parseText(rawBody)
+} catch (Exception e) {
+    assert false : "Response is not valid JSON: ${e.message}\nBody: ${rawBody}"
+}
+
+// 4. Kiểm tra các field top-level
+assert json.success == true : "success must be true but was: ${json.success}"
+assert json.message?.toString().contains("Updated") : "message must contain 'Updated' but was: ${json.message}"
+
+// 5. Kiểm tra data không null
+assert json.data != null : "data must not be null"
+
+// (optional) 6. Không lộ field nhạy cảm
+def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
+sensitiveFields.each { f ->
+    assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Get Infor 2" id="66d819d3-556c-48c1-accd-8c4a8cdea5ea"><con:settings/><con:config service="http://localhost:8000" resourcePath="/api/user/me/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get Infor 2" id="c4d19ada-9e8b-41be-b366-0250363934e4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#access_token}"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/api/user/me/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="c13d0e1a-fe5c-450d-8691-349a741f5f55" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// 1. HTTP status
+def status = messageExchange.responseStatusCode as Integer
+assert status == 200 : "Expected 200 but got ${status}"
+
+// 2. Parse JSON
+def body = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(body)
+
+// 3. Các field cơ bản
+assert json.success == true : "success phải true"
+assert json.message == "Fetched" : "message phải là 'Fetched' nhưng hiện tại là '${json.message}'"
+
+// 4. Lấy expected từ Project (do JDBC step set trước đó)
+def expectedUsername = context.expand('${#Project#username}')
+def expectedEmail    = context.expand('${#Project#email}')
+def expectedFullname = context.expand('${#Project#fullname}')
+
+// 5. Check data
+assert json.data != null : "data không được null"
+assert json.data.id instanceof Integer
+
+assert json.data.username == expectedUsername : "Sai username. Expect=${expectedUsername}, Got=${json.data.username}"
+assert json.data.email == expectedEmail       : "Sai email. Expect=${expectedEmail}, Got=${json.data.email}"
+assert json.data.fullname == expectedFullname : "Sai fullname. Expect=${expectedFullname}, Got=${json.data.fullname}"
+
+// (optional) 6. Không lộ field nhạy cảm
+def sensitiveFields = ["password", "is_superuser", "last_login", "groups", "user_permissions"]
+sensitiveFields.each { f ->
+    assert !json.data.containsKey(f) : "Sensitive field '${f}' MUST NOT appear in response"
+}</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7378ca09-27d7-4989-a98f-4f739ca51867" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def body = messageExchange.responseContent
+def json = new JsonSlurper().parseText(body)
+def data = json.data
+
+def tc = context.testCase
+
+def oldUsername = tc.getPropertyValue("old_username")
+def oldEmail    = tc.getPropertyValue("old_email")
+def oldFullname = tc.getPropertyValue("old_fullname")
+def oldFirebase = tc.getPropertyValue("old_firebase")
+
+log.info "Old fullname   = ${oldFullname} | New fullname   = ${data.fullname}"
+log.info "Old email      = ${oldEmail}    | New email      = ${data.email}"
+log.info "Old firebase   = ${oldFirebase} | New firebase   = ${data.firebase_id}"
+
+// Ví dụ: username giữ nguyên
+assert data.username?.toString() == oldUsername : "USERNAME sau update bị đổi, không mong muốn!"
+
+// Các field còn lại PHẢI khác (vì anh vừa update)
+assert data.fullname?.toString()   != oldFullname : "FULLNAME không thay đổi sau update!"
+assert data.email?.toString()      != oldEmail    : "EMAIL không thay đổi sau update!"
+assert data.firebase_id?.toString() != oldFirebase : "FIREBASE_ID không thay đổi sau update!"
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>old_username</con:name><con:value>u_20251207_124742_b08e02</con:value></con:property><con:property><con:name>old_email</con:name><con:value>user_20251207_165431_c50e32@example.com</con:value></con:property><con:property><con:name>old_fullname</con:name><con:value>User_20251207_165431</con:value></con:property><con:property><con:name>old_firebase</con:name><con:value>fb_20251207_165431</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>base_url</con:name><con:value>http://localhost:8000</con:value></con:property><con:property><con:name>jdbc_conn</con:name><con:value>jdbc:mysql://localhost:3306/smartnote_local_db?user=root&amp;password=hoang123&amp;useSSL=false&amp;serverTimezone=UTC </con:value></con:property><con:property><con:name>jdbc_driver</con:name><con:value>com.mysql.cj.jdbc.Driver</con:value></con:property><con:property><con:name>access_token</con:name><con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1MTA0MTIxLCJpYXQiOjE3NjUxMDM4MjEsImp0aSI6IjlhMzAyMTMzZWE2NTQwZjhhM2RlYjRmMDE2YjU3NmNjIiwidXNlcl9pZCI6IjI5In0.3MWZ3fjJH5kxlDGPMzGTQOgEZgThAcV1syq6_s0xc00</con:value></con:property><con:property><con:name>refresh_token</con:name><con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NTE5MDIyMSwiaWF0IjoxNzY1MTAzODIxLCJqdGkiOiJlY2QzMGQ4MDlmYWE0MmExYjRhNTBmMjNjNGRkYzBkZiIsInVzZXJfaWQiOiIyOSJ9.3uWXVOOAdVX0k0Vemjn2Nz2AYU50pEgj-7OBMySlcCs</con:value></con:property><con:property><con:name>user_id</con:name><con:value>29</con:value></con:property><con:property><con:name>username</con:name><con:value>u_20251207_124742_b08e02</con:value></con:property><con:property><con:name>email</con:name><con:value>user_20251207_165431_c50e32@example.com</con:value></con:property><con:property><con:name>fullname</con:name><con:value>User_20251207_165431</con:value></con:property><con:property><con:name>password</con:name><con:value>Pass257872</con:value></con:property><con:property><con:name>firebase_id</con:name><con:value>fb_20251207_165431</con:value></con:property><con:property><con:name>topic_id</con:name><con:value>60</con:value></con:property><con:property><con:name>search_text</con:name><con:value>tv_20251207_124743_9227e7</con:value></con:property><con:property><con:name>add_word</con:name><con:value>安い</con:value></con:property><con:property><con:name>vocal_topic_id</con:name><con:value>94</con:value></con:property><con:property><con:name>add_word_id</con:name><con:value>48</con:value></con:property><con:property><con:name>topic_title</con:name><con:value>tv_20251207_124743_9227e7</con:value></con:property><con:property><con:name>vocal_detail_id</con:name><con:value>94</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>Profile 1</con:name><con:accessToken/><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:accessTokenStatus>UNKNOWN</con:accessTokenStatus><con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer><con:oAuth1Profile><con:name>Profile 2</con:name><con:accessTokenPosition>HEADER</con:accessTokenPosition></con:oAuth1Profile></con:oAuth1ProfileContainer><con:sensitiveInformation/></con:soapui-project>
