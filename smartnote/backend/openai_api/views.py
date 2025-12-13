@@ -3,11 +3,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from .services import generate_fill_in_blank
 from rest_framework.permissions import AllowAny
+from drf_spectacular.openapi import AutoSchema
 
 class GenerateFillInBlankView(APIView):
 
      # Không dùng bất kỳ cơ chế xác thực nào
     authentication_classes = []             # 👈 tắt auth
+    schema = AutoSchema()
     permission_classes = [AllowAny]         # 👈 cho phép truy cập tự do
     
     """

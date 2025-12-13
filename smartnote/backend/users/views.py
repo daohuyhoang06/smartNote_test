@@ -16,9 +16,11 @@ class UserListCreateView(generics.ListCreateAPIView):
 
     # Tắt authentication riêng cho POST để khỏi dính CSRF khi test bằng Postman/cURL
     def get_authenticators(self):
-        if self.request.method == "POST":
+        request = getattr(self, "request", None)
+        if request and request.method == "POST":
             return []
         return super().get_authenticators()
+
 
     # Bọc list()
     def list(self, request, *args, **kwargs):

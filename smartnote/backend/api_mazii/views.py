@@ -13,6 +13,7 @@ from rest_framework.decorators import (
     permission_classes,
     authentication_classes,
 )
+from drf_spectacular.utils import extend_schema
 
 
 def limit_examples(data, limit=2):
@@ -36,6 +37,7 @@ def limit_examples(data, limit=2):
             for ex in data[:limit]
         ]
 
+@extend_schema(exclude=True)
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def searchWord(request, pk):   # pk sẽ nhận "不完全" / "しぜん" ...
@@ -48,6 +50,7 @@ def searchWord(request, pk):   # pk sẽ nhận "不完全" / "しぜん" ...
     except Exception as e:
         return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+@extend_schema(exclude=True)
 @api_view(['GET'])
 @permission_classes([AllowAny])        # <-- đặt ở decorator
 @authentication_classes([])            # <-- bỏ parse JWT

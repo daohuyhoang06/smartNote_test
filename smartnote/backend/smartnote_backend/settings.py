@@ -168,6 +168,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",  # tuỳ bạn
     ],
     "EXCEPTION_HANDLER": "utils.exception_handler.custom_exception_handler",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # Lấy key ký JWT từ biến môi trường, fallback về SECRET_KEY (nên đặt riêng)

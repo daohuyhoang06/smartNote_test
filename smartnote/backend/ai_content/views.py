@@ -5,12 +5,16 @@ from rest_framework import status
 from .services import get_random_exercises
 from .serializers import ExerciseSerializer
 from rest_framework.permissions import AllowAny
+from drf_spectacular.utils import extend_schema
+from drf_spectacular.openapi import AutoSchema
 
 logger = logging.getLogger(__name__)
+
 
 class ExerciseView(APIView):
      # Không dùng bất kỳ cơ chế xác thực nào
     authentication_classes = []             # 👈 tắt auth
+    schema = AutoSchema()
     permission_classes = [AllowAny]  
     """
     Endpoint: /api/ai/exercise/?word=勉強&display_mode=kanji

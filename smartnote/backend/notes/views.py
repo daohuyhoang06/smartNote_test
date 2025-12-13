@@ -13,7 +13,7 @@ from .permissions import IsOwnerOnly
 from .pagination import NotePagination
 from django.db import transaction
 from notes.tasks import sync_and_generate_exercises_task
-
+from drf_spectacular.openapi import AutoSchema
 from utils.api_response import ok, fail, fail_errors  # <-- thêm fail_errors
 
 
@@ -22,6 +22,7 @@ from utils.api_response import ok, fail, fail_errors  # <-- thêm fail_errors
 # ---------------------------------------------------------------------
 class NoteDetailView(generics.RetrieveAPIView):
     serializer_class = NoteSerializer
+    schema = AutoSchema()
     permission_classes = [permissions.IsAuthenticated, IsOwnerOnly]
 
     def get_object(self):
@@ -46,6 +47,7 @@ class NoteDetailView(generics.RetrieveAPIView):
 # ---------------------------------------------------------------------
 class NoteDetailWithTopicsPagination(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
+    schema = AutoSchema()
     serializer_class = TopicSerializer
     pagination_class = NotePagination
 
@@ -99,6 +101,7 @@ class TopicListCreateView(mixins.ListModelMixin,
 
     queryset = Topic.objects.all().order_by('-created_at')
     serializer_class = TopicSerializer
+    schema = AutoSchema()
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -151,6 +154,7 @@ class TopicDetailView(mixins.RetrieveModelMixin,
     DELETE /topics/<pk>/   -> delete
     """
     serializer_class = TopicSerializer
+    schema = AutoSchema()
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -199,6 +203,7 @@ class TopicDetailView(mixins.RetrieveModelMixin,
 # ---------------------------------------------------------------------
 class AddWordToTopicView(APIView):
     permission_classes = [permissions.IsAuthenticated]
+    schema = AutoSchema()
 
     def post(self, request, pk, query):
         topic = get_object_or_404(Topic, pk=pk, note__user=request.user)
@@ -226,6 +231,7 @@ class AddWordToTopicView(APIView):
 # ---------------------------------------------------------------------
 class DeleteWordFromTopicView(APIView):
     permission_classes = [permissions.IsAuthenticated]
+    schema = AutoSchema()
 
     def delete(self, request, pk, voca_topic_id, voca_detail_id):
         topic = get_object_or_404(Topic, pk=pk, note__user=request.user)
@@ -262,6 +268,7 @@ def _normalize_q(s: str) -> str:
 
 class TopicSearchView(generics.ListAPIView):
     serializer_class = TopicSerializer
+    schema = AutoSchema()
     permission_classes = [permissions.IsAuthenticated]
 
     FIELD_WHITELIST = {"title"}  # đổi theo model thực tế
